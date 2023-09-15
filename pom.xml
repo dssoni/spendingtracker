@@ -34,12 +34,32 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
+    <!-- To define the plugin version in your parent POM -->
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+		  <configuration>
+                <source>17</source> <!-- Set the source Java version -->
+                <target>17</target> <!-- Set the target Java version -->
+            </configuration>
+          <version>3.11.0</version>
+        </plugin>
+        
+      </plugins>
+    </pluginManagement>
+    <!-- To use the plugin goals in your POM or parent POM -->
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+      <plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-		</plugins>
-	</build>
+    </plugins>
+  </build>
 
 </project>
